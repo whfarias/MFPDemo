@@ -11,8 +11,6 @@ git clone <url do github>
 
 Instale o MobileFirst Development Kit descrito na URL: https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/all-tutorials/
 
-
-
 Registre a sua App no MobileFirst utilizando o comando
 App_Dir\mfpdev app register (nome do server)
 
@@ -24,23 +22,26 @@ Com o nome do Runtime e a URL do MobileFirst.
 
 Criar um Banco de Dados usando o Cloudant.
 
-Entrar no arquivo adapter.xml do diretório SaveImageAdapter e trocar as configurações em negrito do Cloudant:
+Entrar no arquivo adapter.xml do diretório SaveImageAdapter e trocar as configurações do Cloudant:
 
-			<protocol>https</protocol>
-			<domain>cloudant_Domain</domain>
-			<port>443</port>
-			<authentication>
-				<basic/>
-					<serverIdentity>
-						<username>USERNAME</username>
-						<password>PASSWORD</password>
-					</serverIdentity>
-			</authentication>
+
+			<domain>URL CLOUDANT</domain>
+			<port>Porta</port>
+			
+			<serverIdentity>
+				<username>Usuario</username>
+				<password>Senha</password>
+			</serverIdentity>
+		
 
 Realizar o deployment do adapter SaveImageAdapter 
 
 \Adapter_DIR\ mfpdev adapter build
 \Adapter_DIR\ mfpdev adapter deploy
+
+Verificar as configurações do MobileFirst se o parametro da URL do server está configurado corretamente que está no <APP_DIR>\config.xml 
+
+    <mfp:server runtime="mfp" url="URL_MFP" />
 
 Gerar o projeto do Xcode usando o Ionic com o comando
 App_Dir\ionic build ios
