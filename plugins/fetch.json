@@ -1,0 +1,10 @@
+{
+    "cordova-plugin-mfp": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-mfp"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
